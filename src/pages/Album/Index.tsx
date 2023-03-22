@@ -43,9 +43,9 @@ function Album(){
                 {
                     albumInfo.tracks.items.map((track,index) => (
                         <li key={index}>
-                            <span>{index + 1}.</span>
-                            <span>{track.name}</span>
-                            <span>{((track.duration_ms / 1000)/60).toFixed(2)} min</span>
+                            <span className="track-number">{index + 1}.</span>
+                            <span className="track-name">{track.name}</span>
+                            <span className="track-duration">{((track.duration_ms / 1000)/60).toFixed(2)} min</span>
                         </li>
                     ))
                 }
