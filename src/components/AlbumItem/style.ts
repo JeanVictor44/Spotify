@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const Container = styled.div `
+export const Container = styled(Link) `
+text-decoration: none;
+cursor: pointer;
     h4 {
         font-weight: bold;
     }
@@ -9,4 +12,7 @@ export const Container = styled.div `
     }
 `
 export const AlbumImage = styled.div `
+    img {
+        max-width: 150px;
+    }
 `

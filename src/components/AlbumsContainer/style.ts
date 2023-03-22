@@ -11,6 +11,6 @@ export const Container = styled.div`
 
 export const AlbumsGrid = styled.div `
 display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap:20px;
+grid-template-columns: repeat(10, 150px);
+gap:25px
 `

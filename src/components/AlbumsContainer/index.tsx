@@ -45,7 +45,7 @@ function AlbumsContainer() {
             <S.AlbumsGrid>
                 {
                     albums.map((album) => (
-                        <AlbumItem name={album.name} albumImg={album.images[1].url} singer={album.artists[0].name} date={album.release_date}/>
+                        <AlbumItem id={album.id} name={album.name} albumImg={album.images[1].url} singer={album.artists[0].name} date={album.release_date}/>
                     ))
                 }
             </S.AlbumsGrid>
