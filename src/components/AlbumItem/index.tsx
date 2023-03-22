@@ -4,19 +4,21 @@ interface AlbumItemProps {
     name: string,
     albumImg: string,
     date: string,
-    singer: string,
-    id: string
+    artists: string,
+    id: string,
+    size?: 'small' | 'medium' | 'big'
 }
-function AlbumItem({id,name, albumImg, date, singer}: AlbumItemProps){
+
+function AlbumItem({id,name, albumImg, date, artists, size = 'medium'}: AlbumItemProps){
     return (
         <S.Container to={`/album/${id}`}>
             
-            <S.AlbumImage>
+            <S.AlbumImage size={size}>
                 <img src={albumImg} alt={`Capa do album ${name}`} />
             </S.AlbumImage>
             <h4>{name}</h4>
             <span>
-                {date} • {singer} 
+                {date} • {artists} 
             </span>
         </S.Container>
     )

@@ -1,35 +1,29 @@
 import Axios  from 'axios'
 import { useEffect, useState } from 'react'
 import { getSpotifyToken, spotifyAPI } from '../../api/spotify'
+import { useHeaderSearch } from '../../context/HeaderSearchContext'
+import { IAlbum } from '../../types/Album'
 import { AlbumItem } from '../AlbumItem'
 import * as S from './style'
 
-interface Album {
-    name:string,
-    release_date: string,
-    id: string,
-    artists: {
-        name: string,
-        id: string
-    }[],
-    total_tracks: number,
-    images: {
-        url: string,
-        width: number,
-        height:number
-    }[]
-}
+
+// Create function to return all artists
 
 function AlbumsContainer() {
-    const [albums, setAlbums] = useState<Album[]>([])
+    const { headerSearch } = useHeaderSearch()
+    const [albums, setAlbums] = useState<IAlbum[]>([])
     const [token, setToken] = useState('')
+
 
     useEffect(() => {
         (async() => {
-            const token = await getSpotifyToken()
-            setToken(token)
-
-            const albums = await spotifyAPI.get('/search?q=Imagine Dragons&type=album&market=BR', {
+            if(!token){
+                const token = await getSpotifyToken()
+                // adicionar event listener para mudar o token, adicionar o token no context
+                setToken(token)
+            }
+            
+            const albums = await spotifyAPI.get(`/search?q=${headerSearch}&type=album&market=BR`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -37,15 +31,15 @@ function AlbumsContainer() {
             setAlbums(albums.data.albums.items)
 
         })()
-    },[])
+    },[headerSearch])
     
     return (
         <S.Container>
-            <h3>Resultados encontrados para: “Imagine Dragons”</h3>
+            <h3>Resultados encontrados para: “{headerSearch}”</h3>
             <S.AlbumsGrid>
                 {
                     albums.map((album) => (
-                        <AlbumItem id={album.id} name={album.name} albumImg={album.images[1].url} singer={album.artists[0].name} date={album.release_date}/>
+                        <AlbumItem id={album.id} name={album.name} albumImg={album.images[1].url} artists={album.artists[0].name} date={album.release_date}/>
                     ))
                 }
             </S.AlbumsGrid>

@@ -5,9 +5,12 @@ import settings from '../../assets/settings.svg'
 import moon from '../../assets/moon.svg'
 import profileImg from '../../assets/profile.svg'
 import { useLocation } from 'react-router-dom'
+import { useHeaderSearch } from '../../context/HeaderSearchContext'
 
 function Header(){
+    const { changeHeaderSearch } = useHeaderSearch()
     const location = useLocation()
+    
     return (
         <S.Container>
             <div>
@@ -19,7 +22,7 @@ function Header(){
                         <S.SearchIcon>
                             <img src={search} alt="Icone de pesquisa"/>
                         </S.SearchIcon>                
-                        <input type="text" placeholder='Search'/>
+                        <input type="text" placeholder='Search' onChange={changeHeaderSearch}/>
                     </S.SearchContainer>
                 ) : (
                     <S.HeaderDescription>

@@ -11,8 +11,12 @@ cursor: pointer;
         margin-top:8px;
     }
 `
-export const AlbumImage = styled.div `
+
+interface IAlbumImage {
+    size: 'small' | 'medium' | 'big'
+}
+export const AlbumImage = styled.div<IAlbumImage> `
     img {
-        max-width: 150px;
+        max-width: ${({size}) => size === 'small' ? '60px' : size == 'medium' ? '150px' : '350px'};
     }
 `
