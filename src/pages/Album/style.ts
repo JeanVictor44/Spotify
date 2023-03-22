@@ -9,6 +9,8 @@ export const Container = styled.div `
 
 export const TracksList = styled.ul `
     max-width: 800px;
+    height:500px;
+    overflow-y:scroll;
     list-style: none;
     li + li {
         margin-top: 24px;
