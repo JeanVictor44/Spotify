@@ -1,4 +1,5 @@
 import { Artist } from "./Artist"
+import { ITrack } from "./Track"
 
 export interface IAlbum {
     name:string,
@@ -12,10 +13,6 @@ export interface IAlbum {
         height:number
     }[],
     tracks: {
-        items: {
-            name: string,
-            artists: Artist[],
-            duration_ms: number
-        }[]
+        items: ITrack[]
     }
 }

@@ -29,13 +29,20 @@ function Header(){
                         </S.SearchIcon>                
                         <input type="text" placeholder='Search' onChange={changeHeaderSearch}/>
                     </S.SearchContainer>
-                ) : (
+                ) : location.pathname.match(/track/gi) ? (
                     <S.HeaderDescription>
                         <span>
-                            Faixas do album
+                            Escutar faixa
                         </span>  
-                    </S.HeaderDescription>    
-                )
+                    </S.HeaderDescription>
+                        
+                    ) 
+                    : (<S.HeaderDescription>
+                            <span>
+                                Faixas do album
+                            </span>  
+                        </S.HeaderDescription>
+                    )   
                 
             }
             

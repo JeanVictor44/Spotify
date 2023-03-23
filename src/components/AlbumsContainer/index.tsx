@@ -17,11 +17,11 @@ function AlbumsContainer() {
 
     useEffect(() => {
         (async() => {
-            if(!token){
+            
                 const token = await getSpotifyToken()
                 // adicionar event listener para mudar o token, adicionar o token no context
                 setToken(token)
-            }
+            
             
             const albums = await spotifyAPI.get(`/search?q=${headerSearch}&type=album&market=BR`, {
                 headers: {
@@ -29,6 +29,7 @@ function AlbumsContainer() {
                 }
             })
             setAlbums(albums.data.albums.items)
+            console.log(albums)
 
         })()
     },[headerSearch])

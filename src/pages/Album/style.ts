@@ -9,16 +9,23 @@ export const Container = styled.div `
 
 export const TracksList = styled.ul `
     width: 100%;
-    max-width: 500px;
+    max-width: 800px;
     height:500px;
     overflow-y:scroll;
     list-style: none;
     li + li {
-        margin-top: 24px;
+        margin-top: 14px;
     }
-    li {
+    li a{
+        text-decoration: none;
+        transition:.3s ;
+        border-radius:5px ;
+        cursor: pointer;
+        padding:10px 0 10px 5px;
         display: flex;
-        
+        &:hover {
+            background-color: #AC2B2E;
+        }        
         .track-name {
             font-weight: bold;
         }
@@ -27,9 +34,8 @@ export const TracksList = styled.ul `
             color: gray;
         }
         .track-duration {
-            display: block;
             margin-left:auto;
-            width: 80px;
+            width: 70px;
             color: gray;
         }
         

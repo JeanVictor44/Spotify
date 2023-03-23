@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import { getSpotifyToken, spotifyAPI } from '../../api/spotify'
 import { AlbumItem } from '../../components/AlbumItem'
 import { IAlbum } from '../../types/Album'
+import { convertMilisecondsToMinutes } from '../../utils/convertMilisecondsToMinutes'
+import { formatDurationMinutes } from '../../utils/formatDurationMinutes'
 import * as S from './style'
+import arrowLeft from '../../assets/arrow-left.svg'
 
 function Album(){
     const [albumInfo, setAlbumInfo] = useState<IAlbum>({} as IAlbum)
@@ -38,14 +42,20 @@ function Album(){
 
     return (
         <S.Container>
+            <Link to='/'>
+                <img src={arrowLeft} />
+            </Link>
             <AlbumItem size="big" albumImg={albumInfo?.images[0]?.url} artists={albumInfo?.artists[0]?.name} date={albumInfo.release_date} name={albumInfo.name} id={albumInfo.id}/>
             <S.TracksList>
                 {
                     albumInfo.tracks.items.map((track,index) => (
+                        
                         <li key={index}>
-                            <span className="track-number">{index + 1}.</span>
-                            <span className="track-name">{track.name}</span>
-                            <span className="track-duration">{((track.duration_ms / 1000)/60).toFixed(2)} min</span>
+                            <Link to={`/track/${track.id}`}>
+                                <span className="track-number">{index + 1}.</span>
+                                <span className="track-name">{track.name}</span>
+                                <span className="track-duration">{formatDurationMinutes(convertMilisecondsToMinutes(track.duration_ms)) }</span>
+                            </Link>
                         </li>
                     ))
                 }
