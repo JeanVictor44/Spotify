@@ -8,6 +8,6 @@ export const Container = styled.div`
         left: 0;
         bottom: 0;
         width: 100%;
-        background-color: red;
+        
     }
 `
