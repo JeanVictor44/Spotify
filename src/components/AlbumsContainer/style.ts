@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+    margin: 0 auto;
     h3 {
         font-size: 25px;
         font-weight: bold;
@@ -10,7 +11,9 @@ export const Container = styled.div`
 `
 
 export const AlbumsGrid = styled.div `
-display: grid;
-grid-template-columns: repeat(10, 150px);
-gap:25px
+    
+    display: grid;
+    grid-template-columns: repeat(5, 0.5fr);
+    gap:25px;
+
 `

@@ -1,3 +1,5 @@
+import { AlbumSizes } from '../../constants/AlbumSizes'
+import { formatTitleAlbum } from '../../utils/formatTitleAlbum'
 import * as S from './style'
 
 interface AlbumItemProps {
@@ -6,19 +8,19 @@ interface AlbumItemProps {
     date: string,
     artists: string,
     id: string,
-    size?: 'small' | 'medium' | 'big'
+    size?: AlbumSizes
 }
 
 function AlbumItem({id,name, albumImg, date, artists, size = 'medium'}: AlbumItemProps){
     return (
-        <S.Container to={`/album/${id}`}>
+        <S.Container size={size} to={`/album/${id}`}>
             
             <S.AlbumImage size={size}>
                 <img src={albumImg} alt={`Capa do album ${name}`} />
             </S.AlbumImage>
-            <h4>{name}</h4>
+            <h4>{size == 'medium' ? formatTitleAlbum(name) : name}</h4>
             <span>
-                {date} • {artists} 
+                {date.slice(0,4)} • {artists} 
             </span>
         </S.Container>
     )

@@ -23,7 +23,7 @@ function AlbumsContainer() {
                 setToken(token)
             
             
-            const albums = await spotifyAPI.get(`/search?q=${headerSearch}&type=album&market=BR`, {
+            const albums = await spotifyAPI.get(`/search?q=${headerSearch}&type=album&market=BR&offset=0&limit=10`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }
@@ -37,6 +37,10 @@ function AlbumsContainer() {
     return (
         <S.Container>
             <h3>Resultados encontrados para: “{headerSearch}”</h3>
+            {
+                albums.length === 0 &&
+                <h1>Não foi possível encontrar resultados</h1> 
+            }
             <S.AlbumsGrid>
                 {
                     albums.map((album) => (

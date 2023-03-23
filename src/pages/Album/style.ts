@@ -4,10 +4,13 @@ export const Container = styled.div `
     display: flex;
     justify-content: center;
     gap:50px;
+    margin-top: 50px;
     
 `
 
-export const TracksList = styled.ul `
+export const TracksList = styled.ul `   
+
+    padding-right:20px;
     width: 100%;
     max-width: 800px;
     height:500px;

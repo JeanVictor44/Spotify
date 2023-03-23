@@ -1,22 +1,35 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { AlbumSizes, ALBUM_SIZES } from "../../constants/AlbumSizes";
 
-export const Container = styled(Link) `
+
+
+
+interface ContainerProps {
+    size: AlbumSizes
+}
+
+export const Container = styled(Link)<ContainerProps> `
 text-decoration: none;
 cursor: pointer;
     h4 {
         font-weight: bold;
+        width: ${({size}) => ALBUM_SIZES[size]};
     }
     span {
-        margin-top:8px;
+        
+        display: block;
+        width: ${({size}) => ALBUM_SIZES[size]};
+
     }
 `
 
 interface IAlbumImage {
-    size: 'small' | 'medium' | 'big'
+    size: AlbumSizes
 }
+
 export const AlbumImage = styled.div<IAlbumImage> `
     img {
-        max-width: ${({size}) => size === 'small' ? '60px' : size == 'medium' ? '150px' : '350px'};
+        max-width: ${({size}) => ALBUM_SIZES[size]};
     }
 `
