@@ -39,7 +39,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Styled-components](https://styled-components.com/)
 - [Axios](https://axios-http.com/docs/intro)
 - [Npm](https://www.npmjs.com/)
-
+- [Vite](https://vitejs.dev/)
 
 ### Funcionalidades
 
@@ -52,7 +52,13 @@ O projeto conta com as seguintes funcionalidades:
 - [x] Escutar demo de uma faixa
 
 
-## :rocket: Como executar o projeto
+
+## Pré-requisitos
+
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/). Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
+
+## :rocket: Preparando o projeto
 
 ```bash
 # Clone este repositório
@@ -63,8 +69,6 @@ $ cd spotify
 
 # Instale as dependências
 $ yarn install
-
-# A aplicação será aberta na porta:3000 - acesse http://localhost:3000
 ```
 
 Este projeto consome duas APIS externas: [Spotify Web API](https://developer.spotify.com/dashboard/) e [Vagalume API](https://auth.vagalume.com.br/). Vamos aprender a configura-las 
@@ -82,11 +86,6 @@ Este projeto consome duas APIS externas: [Spotify Web API](https://developer.spo
 
 :bulb: Não se esqueça de configurar as variáveis de ambiente levando em conta o arquivo de exemplo [.env.example](.env.example)
 
-## Pré-requisitos
-
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/). Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
-
 ### Vagalume API
 ##### Passo 1: Acesse o link do [Vagalume API](https://developer.spotify.com/dashboard/) e crie uma conta Vagalume ou faça login
 <img src="./previews/vagalume-api-login.png" />
@@ -94,7 +93,6 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 ##### Passo 2: Acesse este link para [Criar credencial ](https://auth.vagalume.com.br/settings/api/) e preencher o seu .env com a chave 
 ##### api do vagalume
 <img src="./previews/vagalume-api-credencial.png" alt="Login page" width="650">
-
 
 ### :coffee: Rodando a aplicação 
 
