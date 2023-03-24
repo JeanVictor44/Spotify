@@ -11,7 +11,14 @@ interface AlbumItemProps {
     size?: AlbumSizes
 }
 
-function AlbumItem({id,name, albumImg, date, artists, size = 'medium'}: AlbumItemProps){
+function AlbumItem({
+    id,
+    name , 
+    albumImg , 
+    date,
+    artists,
+    size = 'medium'
+}: AlbumItemProps){
     return (
         <S.Container size={size} to={`/album/${id}`}>
             

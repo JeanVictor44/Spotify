@@ -26,8 +26,10 @@
 
 ## :art: Layout
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-    <img src="./previews/album-tracks.png" alt="Register page" width="500px"/>
+    <img src="./previews/album-tracks.png" alt="Album tracks" width="500px"/>
+    <img src="./previews/track-details.png" alt="Track details" width="500px"/>
 </p>
+
 
 ## :hammer_and_wrench: Tecnologias
 

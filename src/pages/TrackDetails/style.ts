@@ -20,9 +20,20 @@ export const ContainerInfos = styled.div `
             font-weight: bold;
         }
     }
+    @media (max-width:950px) {
+        > div {
+            gap:5px;
+            
+        }
+    }
+ 
 `
 
 export const Container = styled.div`
+.link-return {
+    display: flex;
+    gap:10px
+} 
 .spotify-link{
     display: block;
     margin: 0 auto;
@@ -70,13 +81,11 @@ export const Container = styled.div`
             max-width: 450px;
             margin: 0 auto 15px 0 auto;
         }
-        p {
+        .track-letter {
             max-width: 450px;
             margin: 0 auto;
         }
-        a {
-            padding: 20px;
-        }
+       
         audio {
             position: static;
             

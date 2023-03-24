@@ -5,8 +5,12 @@ export const Container = styled.div `
     flex-wrap: wrap;
     justify-content: center;
     gap:50px;
-    margin:20px 
-    
+    margin:20px;
+     
+    .link-return {
+        display: flex;
+        gap:10px;
+    } 
 `
 
 export const TracksList = styled.ul `   
@@ -28,15 +32,17 @@ export const TracksList = styled.ul `
         cursor: pointer;
         padding:10px 0 10px 5px;
         display: flex;
+        align-items: center;
         &:hover {
-            background-color: #AC2B2E;
+            background-color: #5a5a5a ;
         }        
         .track-name {
             font-weight: bold;
+            max-width: 80%;
         }
         .track-number{
             margin-right:10px;
-            color: gray;
+            color: #5a5a5a;
         }
         .track-duration {
             margin-left:auto;

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Default } from "../layouts/default";
 import { AlbumsTracks } from "../pages/AlbumsTracks";
-import { Home } from "../pages/Home";
+import { AlbumsSearch } from "../pages/Home";
 import { TrackDetails } from "../pages/TrackDetails";
 
 export const router = createBrowserRouter([
@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home />
+                element: <AlbumsSearch />
             },
             {
                 path: '/album/:id',
