@@ -2,7 +2,6 @@ import Axios from 'axios'
 import { IAlbum } from '../types/Album';
 import { IArtistDetails } from '../types/Artist';
 import { ITrack } from '../types/Track';
-import { vagalumeApi } from './vagalume';
 
 
 
@@ -59,6 +58,7 @@ export const fetcherTrackDetails = async (url: string): Promise<ITrack> => {
             Authorization: `Bearer ${token}`
         }
     })).data
+    console.log(trackInfo)
     return trackInfo
 }
 
