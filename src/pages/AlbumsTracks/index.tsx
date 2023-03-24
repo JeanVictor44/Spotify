@@ -9,7 +9,7 @@ import { formatDurationMinutes } from '../../utils/formatDurationMinutes'
 import * as S from './style'
 import arrowLeft from '../../assets/arrow-left.svg'
 
-function Album(){
+function AlbumsTracks(){
     const [albumInfo, setAlbumInfo] = useState<IAlbum>({} as IAlbum)
     const [loading, setLoading] = useState(true)
     const [token, setToken] = useState('')
@@ -64,4 +64,4 @@ function Album(){
     )
 }
 
-export { Album }
+export { AlbumsTracks }

@@ -19,7 +19,7 @@ interface IArtistDetails {
     }[],
     duration_ms: number
 }
-function Track(){
+function TrackDetails(){
     const [token, setToken] = useState('')
     const [trackInfo, setTrackInfo ] = useState({} as ITrack)
     const [trackLetter, setTrackLetter] = useState('')
@@ -87,4 +87,4 @@ function Track(){
     )
 }
 
-export { Track }
+export { TrackDetails }

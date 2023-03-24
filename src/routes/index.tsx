@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Default } from "../layouts/default";
-import { Album } from "../pages/Album/Index";
+import { AlbumsTracks } from "../pages/AlbumsTracks";
 import { Home } from "../pages/Home";
-import { Track } from "../pages/Track";
+import { TrackDetails } from "../pages/TrackDetails";
 
 export const router = createBrowserRouter([
     {
@@ -15,11 +15,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/album/:id',
-                element: <Album />
+                element: <AlbumsTracks />
             },
             {
                 path:'/track/:id',
-                element: <Track />
+                element: <TrackDetails />
             }
         ]
     }
