@@ -29,7 +29,6 @@ function AlbumsContainer() {
                 }
             })
             setAlbums(albums.data.albums.items)
-            console.log(albums)
 
         })()
     },[headerSearch])

@@ -46,21 +46,7 @@ function Header(){
                 
             }
             
-            <S.Actions>
-                <button>
-                    <img src={moon} alt="Ícone de troca de tema" />
-                </button>
-                <button>
-                    <img src={settings} alt="Ícone de configurações"/>
-                </button>
-                
-                <button className="profile-btn">
-                    <span>Jean Victor</span>
-                    <div>
-                        <img src={profileImg} alt="Foto de Perfil"/>
-                    </div>
-                </button>
-            </S.Actions>
+            
         </S.Container>
     )
 }

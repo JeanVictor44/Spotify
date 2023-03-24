@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div `
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap:50px;
-    margin-top: 50px;
+    margin:20px 
     
 `
 
@@ -16,6 +17,7 @@ export const TracksList = styled.ul `
     height:500px;
     overflow-y:scroll;
     list-style: none;
+    
     li + li {
         margin-top: 14px;
     }

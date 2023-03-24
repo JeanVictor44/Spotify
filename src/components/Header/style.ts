@@ -2,9 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.header`
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
     padding:20px 40px;
+    @media (max-width:715px) {
+        justify-content: center;
+
+    }
 `
 
 export const HeaderDescription = styled.div `
@@ -14,9 +18,12 @@ export const HeaderDescription = styled.div `
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 850px;
     width: 100%;
+    max-width: 850px;
     border-radius: 10px;
+    margin: 0 auto;
+    margin-top: 20px;
+
     span {
         font-size: 18px;
     }
@@ -26,6 +33,11 @@ export const SearchContainer = styled.div `
     width: 100%;
     max-width: 450px;
     position: relative;
+    @media (max-width:715px) {
+        margin-top: 20px;
+        margin-right: 40px;
+        
+    }
     input {
         width:100%;
         height:100%;
@@ -36,6 +48,7 @@ export const SearchContainer = styled.div `
         padding-left: 40px;
         font-size: 16px;
     }
+    margin: 0 auto;
 `
 export const SearchIcon = styled.div `
     position: absolute;
