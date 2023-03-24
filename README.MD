@@ -39,6 +39,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [TypeScript](https://www.typescriptlang.org/)
 - [React-Router-Dom v6](https://reactrouter.com/docs/en/v6)
 - [Styled-components](https://styled-components.com/)
+- [SWR](https://swr.vercel.app/pt-BR)
 - [Axios](https://axios-http.com/docs/intro)
 - [Npm](https://www.npmjs.com/)
 - [Vite](https://vitejs.dev/)
