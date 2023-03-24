@@ -1,8 +1,37 @@
 import styled from "styled-components";
 
+
+export const ContainerInfos = styled.div `
+    .track-duration {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .artist-img {
+        width:40px ;
+        height: 40px;
+        border-radius: 50%;
+    }
+    > div {
+        margin-top: 10px;
+        display: flex;
+        gap:20px;
+        align-items: center;
+        p {
+            font-weight: bold;
+        }
+    }
+`
+
 export const Container = styled.div`
+.spotify-link{
+    display: block;
+    margin: 0 auto;
+    text-decoration: none;
+    font-weight: bold;
+    width: 250px;
+}
 > div {
-display: flex;
+    display: flex;
     max-width: 1000px;
     padding: 20px;
     margin: 0 auto;
@@ -29,8 +58,8 @@ display: flex;
         bottom: 0;
         position: absolute;
         width: 100%;
-        
     }
+
     @media (max-width:950px) {
         >div {
             flex-direction: column;
@@ -51,6 +80,11 @@ display: flex;
         audio {
             position: static;
             
+        }
+    }
+    @media (max-width:950px) and (min-height:800px) {
+        audio {
+            position: absolute;
         }
     }
 `

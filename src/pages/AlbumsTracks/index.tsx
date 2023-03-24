@@ -4,8 +4,7 @@ import { useParams } from 'react-router-dom'
 import { getSpotifyToken, spotifyAPI } from '../../api/spotify'
 import { AlbumItem } from '../../components/AlbumItem'
 import { IAlbum } from '../../types/Album'
-import { convertMilisecondsToMinutes } from '../../utils/convertMilisecondsToMinutes'
-import { formatDurationMinutes } from '../../utils/formatDurationMinutes'
+import { formatDurationTrack } from '../../utils/formatDurationTrack'
 import * as S from './style'
 import arrowLeft from '../../assets/arrow-left.svg'
 
@@ -54,7 +53,7 @@ function AlbumsTracks(){
                             <Link to={`/track/${track.id}`}>
                                 <span className="track-number">{index + 1}.</span>
                                 <span className="track-name">{track.name}</span>
-                                <span className="track-duration">{formatDurationMinutes(convertMilisecondsToMinutes(track.duration_ms)) }</span>
+                                <span className="track-duration">{formatDurationTrack(track.duration_ms)}</span>
                             </Link>
                         </li>
                     ))

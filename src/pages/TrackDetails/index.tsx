@@ -5,8 +5,7 @@ import { vagalumeApi } from '../../api/vagalume'
 import { AlbumItem } from '../../components/AlbumItem'
 import { AudioPlayer } from '../../components/AudioPlayer'
 import { ITrack } from '../../types/Track'
-import { convertMilisecondsToMinutes } from '../../utils/convertMilisecondsToMinutes'
-import { formatDurationMinutes } from '../../utils/formatDurationMinutes'
+import { formatDurationTrack } from '../../utils/formatDurationTrack'
 import * as S from './style'
 
 interface IArtistDetails {
@@ -38,6 +37,7 @@ function TrackDetails(){
                     Authorization: `Bearer ${token}`
                 }
             })).data
+
             setTrackInfo(trackInfo)
             
             const artist = (await spotifyAPI.get(`/artists/${trackInfo.artists[0].id}`, {
@@ -64,10 +64,18 @@ function TrackDetails(){
     }
     return (
         <S.Container>
-            
+            <a className="spotify-link" target="_blank" href={trackInfo.external_urls.spotify}>Ouvir no Spotify Original </a>
+
             <div>
-                <a target="_blank" href={trackInfo.external_urls.spotify} className="spotify-link">Ouvir no Spotify Original </a>
-                <AlbumItem id={trackInfo.album.id} size="big" albumImg={trackInfo.album.images[0].url} artists={trackInfo.artists[0].name} date={trackInfo.album.release_date} name={trackInfo.album.name}/>
+                <S.ContainerInfos>
+             
+                    <AlbumItem id={trackInfo.album.id} size="big" albumImg={trackInfo.album.images[0].url} artists={trackInfo.artists[0].name} date={trackInfo.album.release_date} name={trackInfo.album.name}/>
+                    <div>
+                        <img className="artist-img" src={artistInfo.images[2].url} />
+                        <p>{artistInfo.genres.join(', ')}</p>
+                    </div>
+                    <p className='track-duration'>Duração: {formatDurationTrack(trackInfo.duration_ms)}</p>
+                </S.ContainerInfos>
             
                 <div>
                     <h1>Letra - {trackInfo.name}</h1>
@@ -77,11 +85,9 @@ function TrackDetails(){
                         }
                     </p>
                 </div>
-            </div>
-            <img src={artistInfo.images[2].url} />
 
-            <p>Gêneros: {artistInfo.genres.join(', ')}</p>
-            <p>duração: {formatDurationMinutes(convertMilisecondsToMinutes(trackInfo.duration_ms))}</p>
+            </div>
+
             <AudioPlayer src={trackInfo.preview_url} controls />
         </S.Container>
     )
