@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
-import { fetcherArtistDetails, fetcherLetter, fetcherTrackDetails } from '../../api/spotify'
-import { vagalumeApi } from '../../api/vagalume'
+import { fetcherArtistDetails, fetcherTrackDetails } from '../../api/spotify'
+import { fetcherLetter, vagalumeApi } from '../../api/vagalume'
 import { AlbumItem } from '../../components/AlbumItem'
 import { AudioPlayer } from '../../components/AudioPlayer'
 import { formatDurationTrack } from '../../utils/formatDurationTrack'
