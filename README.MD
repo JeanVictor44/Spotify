@@ -95,7 +95,7 @@ Este projeto consome duas APIS externas: [Spotify Web API](https://developer.spo
 
 ##### Passo 2: Acesse este link para [Criar credencial ](https://auth.vagalume.com.br/settings/api/) e preencher o seu .env com a chave 
 ##### api do vagalume
-<img src="./previews/vagalume-api-credencial.png" alt="Login page" width="650">
+<img src="./previews/vagalume-api-credencial.jpeg" alt="Credentials page" width="650">
 
 ### :coffee: Rodando a aplicação 
 
