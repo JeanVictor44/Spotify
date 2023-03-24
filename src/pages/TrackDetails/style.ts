@@ -43,7 +43,7 @@ export const Container = styled.div`
         margin-bottom: 15px;
     }
     
-    & > div {
+    .track-letter {
         height:500px;
 
         overflow-y:auto;
@@ -82,9 +82,5 @@ export const Container = styled.div`
             
         }
     }
-    @media (max-width:950px) and (min-height:800px) {
-        audio {
-            position: absolute;
-        }
-    }
+   
 `

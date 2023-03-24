@@ -77,7 +77,7 @@ function TrackDetails(){
                     <p className='track-duration'>Duração: {formatDurationTrack(trackInfo.duration_ms)}</p>
                 </S.ContainerInfos>
             
-                <div>
+                <div className="track-letter">
                     <h1>Letra - {trackInfo.name}</h1>
                     <p>
                         {
