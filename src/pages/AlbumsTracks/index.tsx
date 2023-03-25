@@ -10,7 +10,7 @@ import { Loading } from '../../components/Loading'
 
 function AlbumsTracks(){
     const params = useParams()
-    const { data,isLoading} = useSWR(`/albums/${params.id}`,fetcherAlbumDetails)
+    const { data: album,isLoading} = useSWR(`/albums/${params?.id}`,fetcherAlbumDetails)
     
     if(isLoading){
         return <Loading />
@@ -25,20 +25,20 @@ function AlbumsTracks(){
                 Voltar
             </Link>
             {
-                data && (
+                album && (
                     <AlbumItem 
                         size="big" 
-                        albumImg={data.images[0].url} 
-                        artists={data.artists[0].name} 
-                        date={data.release_date} 
-                        name={data.name} 
-                        id={data.id} 
+                        albumImg={album?.images[0]?.url} 
+                        artists={album?.artists[0]?.name} 
+                        date={album?.release_date} 
+                        name={album?.name} 
+                        id={album?.id} 
                     />
                 )
             }
             <S.TracksList>
                 {
-                    data?.tracks.items.map((track,index) => (
+                    album?.tracks?.items.map((track,index) => (
                         <li key={index}>
                             <Link to={`/track/${track.id}`}>
                                 <span className="track-number">{index + 1}.</span>

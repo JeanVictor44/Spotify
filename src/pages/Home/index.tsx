@@ -7,7 +7,7 @@ import { Loading } from '../../components/Loading'
 
 function AlbumsSearch() {
     const { headerSearch } = useHeaderSearch()
-    const {data, isLoading } = useSWR(`/search?q=${headerSearch}&type=album&market=BR&offset=0&limit=10`, fetcherAlbums)
+    const {data:albums, isLoading } = useSWR(`/search?q=${headerSearch}&type=album&market=BR&offset=0&limit=10`, fetcherAlbums)
     
     if(isLoading){
         return <Loading /> 
@@ -17,12 +17,12 @@ function AlbumsSearch() {
         <S.Container>
             <h3>Resultados encontrados para: “{headerSearch}”</h3>
             {
-                data?.length === 0 &&
+                albums?.length === 0 &&
                 <h1>Não foi possível encontrar resultados</h1> 
             }
             <S.AlbumsGrid>
                 {
-                    data?.map((album) => (
+                    albums?.map((album) => (
                         <AlbumItem
                             key={album.id} 
                             id={album.id} 

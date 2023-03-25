@@ -16,12 +16,12 @@ function TrackDetails(){
     const {
             data: track, 
             isLoading: isLoadingTrack
-        } = useSWR(`/tracks/${params.id}?market=BR`, fetcherTrackDetails)
+        } = useSWR(`/tracks/${params?.id}?market=BR`, fetcherTrackDetails)
     
     const {
             data: artist, 
             isLoading: isLoadingArtist
-        } = useSWR(`/artists/${track?.artists[0].id}`, fetcherArtistDetails)
+        } = useSWR(`/artists/${track?.artists[0]?.id}`, fetcherArtistDetails)
     
     const {
             data: letter, 
@@ -37,7 +37,7 @@ function TrackDetails(){
     return (
         <S.Container>
             
-            <a className="spotify-link" target="_blank" href={track?.external_urls.spotify}>Ouvir no Spotify Original </a>
+            <a className="spotify-link" target="_blank" href={track?.external_urls?.spotify}>Ouvir no Spotify Original </a>
             
             <div>
                 <Link to='/' className='link-return'>
@@ -50,23 +50,23 @@ function TrackDetails(){
                     {
                         track && (
                             <AlbumItem 
-                                id={track.album.id} 
+                                id={track?.album?.id} 
                                 size="big" 
-                                albumImg={track.album.images[0].url} 
-                                artists={track.artists[0].name} 
-                                date={track.album.release_date} 
-                                name={track.album.name}
+                                albumImg={track?.album?.images[0]?.url} 
+                                artists={track?.artists[0]?.name} 
+                                date={track?.album?.release_date} 
+                                name={track?.album?.name}
                             />
                         )
                     }
                     
                     <div>
-                        <img className="artist-img" src={artist?.images[2].url} />
+                        <img className="artist-img" src={artist?.images[2]?.url} />
                         <p>{artist?.genres.join(', ')}</p>
                     </div>
                     {
                         track && (
-                            <p className='track-duration'>Duração: {formatDurationTrack(track.duration_ms)}</p>
+                            <p className='track-duration'>Duração: {formatDurationTrack(track?.duration_ms)}</p>
                         )    
                     }
                     
