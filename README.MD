@@ -1,6 +1,9 @@
 <p align="center">
   <img src="./src/assets/logo.svg" />
 <p>
+<h3 align="center">
+    <a href="https://spotify-ecru-nine.vercel.app/">Acessar a demonstração</a>
+<h3 >
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/JeanVictor44/spotify?color=black">
@@ -93,7 +96,7 @@ Este projeto consome duas APIS externas: [Spotify Web API](https://developer.spo
 ##### Passo 1: Acesse o link do [Vagalume API](https://developer.spotify.com/dashboard/) e crie uma conta Vagalume ou faça login
 <img src="./previews/vagalume-api-login.png" />
 
-##### Passo 2: Acesse este link para [Criar credencial ](https://auth.vagalume.com.br/settings/api/) e preencher o seu .env com a chave 
+##### Passo 2: Acesse este link para [Criar credencial](https://auth.vagalume.com.br/settings/api/) e preencher o seu .env com a chave 
 ##### api do vagalume
 <img src="./previews/vagalume-api-credencial.jpeg" alt="Credentials page" width="650">
 
