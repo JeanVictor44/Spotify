@@ -3,13 +3,14 @@ import { useHeaderSearch } from '../../context/HeaderSearchContext'
 import { AlbumItem } from '../../components/AlbumItem'
 import * as S from './style'
 import useSWR from 'swr' 
+import { Loading } from '../../components/Loading'
 
 function AlbumsSearch() {
     const { headerSearch } = useHeaderSearch()
     const {data, isLoading } = useSWR(`/search?q=${headerSearch}&type=album&market=BR&offset=0&limit=10`, fetcherAlbums)
     
-    if(isLoading && !data){
-        return <h1>Carregando álbuns</h1>
+    if(isLoading){
+        return <Loading /> 
     }
 
     return (

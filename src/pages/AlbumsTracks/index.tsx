@@ -6,13 +6,14 @@ import * as S from './style'
 import arrowLeft from '../../assets/arrow-left.svg'
 import useSWR from 'swr'
 import { fetcherAlbumDetails } from '../../api/spotify'
+import { Loading } from '../../components/Loading'
 
 function AlbumsTracks(){
     const params = useParams()
     const { data,isLoading} = useSWR(`/albums/${params.id}`,fetcherAlbumDetails)
     
     if(isLoading){
-        return <h1>Loading...</h1>
+        return <Loading />
     }
 
     return (

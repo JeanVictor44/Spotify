@@ -7,6 +7,7 @@ import { formatDurationTrack } from '../../utils/formatDurationTrack'
 import * as S from './style'
 import arrowLeft from '../../assets/arrow-left.svg'
 import useSWR from 'swr'
+import { Loading } from '../../components/Loading'
 
 
 function TrackDetails(){
@@ -30,7 +31,7 @@ function TrackDetails(){
 
     if(isLoadingTrack || isLoadingArtist || isLoadingLetter){
         return (
-            <h1>Loading</h1>
+            <Loading />
         )
     }
     return (
