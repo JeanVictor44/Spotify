@@ -13,7 +13,7 @@ interface IHeaderSearchProvider {
 }
 
 export const HeaderSearchProvider = ({children}: IHeaderSearchProvider) => {
-    const [headerSearch, setHeaderSearch] = useState('Eminem')
+    const [headerSearch, setHeaderSearch] = useState('Guns n roses')
 
     const changeHeaderSearch = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setHeaderSearch(e.target.value)
